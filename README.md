@@ -20,6 +20,7 @@ controllers, models, middlewares, and even websocket. This has a user auth alrea
 1. Clone the repository and install dependencies with pnpm.
 ```
 git clone git@github.com:hugostanley/node-starter.git your-repo-name
+git remote set-url origin your-repository-url-here
 pnpm i
 ```
 
