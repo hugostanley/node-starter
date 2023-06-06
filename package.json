@@ -2,6 +2,7 @@
   "name": "node-starter",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\"",
