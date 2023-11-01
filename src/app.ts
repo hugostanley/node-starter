@@ -4,7 +4,7 @@ dotenv.config()
 import express, { Express } from 'express'
 import mongoose from 'mongoose'
 import cors, { CorsOptions } from 'cors'
-import * as routes from './routes/index.js'
+import * as routes from './routes'
 import morgan from 'morgan'
 
 /* import your websocket controllers 
@@ -18,7 +18,7 @@ const server = createServer(app)
 const PORT: string | number = process.env.PORT || 4000
 const allowedOrigins = ["http://localhost:5173"]
 const options: CorsOptions = {
-  origin: allowedOrigins
+    origin: allowedOrigins
 }
 
 /* Connect you controllers here 
@@ -42,7 +42,7 @@ app.use(express.json())
 app.use(morgan('tiny'))
 
 Object.values(routes).forEach(route => {
-  app.use(route)
+    app.use(route)
 })
 
 /* Modify as you please */
@@ -50,9 +50,9 @@ const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWOR
 
 mongoose.connect(uri, {
 }).then(() => {
-  server.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`)
-  })
+    server.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`)
+    })
 }).catch(error => { throw error })
 
 

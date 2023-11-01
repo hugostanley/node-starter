@@ -1,5 +1,6 @@
+// @ts-nocheck
 import { Response, Request } from "express";
-import { UserModel, User } from '../models/index.js'
+import { UserModel, User } from '../models/'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
